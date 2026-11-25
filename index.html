@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Íñigo de la Calle</title>
-<meta name="description" content="Íñigo de la Calle. Entre Bilbao y París. Ahora estoy montando La Fuga Stop, una aventura en autostop hasta un pueblo secreto.">
+<title>Íñigo de la Calle · Desarrollo de negocio y proyectos propios</title>
+<meta name="description" content="Íñigo de la Calle. Abro mercados y monto proyectos desde cero: Alma, Bafir, FOMO coworking, Berba y ahora La Fuga Stop. Entre París y Bilbao.">
 <meta property="og:title" content="Íñigo de la Calle">
-<meta property="og:description" content="Ahora estoy montando La Fuga Stop: sal en autostop, vuelve con una historia.">
+<meta property="og:description" content="Abro mercados y monto proyectos desde cero. Ahora: Alma, Bafir y La Fuga Stop.">
 <meta property="og:image" content="img/inigo-recorte.png">
 <link rel="icon" href="img/simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,84 +14,126 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --papel:#F3EEE4; --papel2:#E8E0D0; --tinta:#141414; --naranja:#FF5A1F; --amarillo:#FFD21F; --blanco:#FFFFFF;
-  /* La Fuga Stop, solo dentro de su tarjeta */
-  --lf-senal:#FFD21F; --lf-fuga:#2741E8; --lf-chispa:#FF5C93; --lf-carton:#F6F0E4;
+  --papel:#F3EEE4; --papel2:#E8E0D0; --tinta:#141414; --gris:#5E5A53; --naranja:#FF5A1F; --amarillo:#FFD21F; --blanco:#FFFFFF;
+  --lf-fuga:#2741E8; --lf-carton:#F6F0E4;
+  --fomo:#FF7FB0;
   --display:"Archivo Black","Arial Black",Impact,sans-serif;
   --texto:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
   --mano:"Caveat","Marker Felt",cursive;
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
 body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--texto);font-size:1.0625rem;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{max-width:100%;display:block}
 .wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
 h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.98;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0}
 .mano{font-family:var(--mano);font-weight:600}
 .km{font-family:var(--display);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem}
 .km::before{content:"";width:1.1rem;height:1.1rem;border-radius:50% 50% 2px 2px;background:var(--naranja);border:2px solid var(--tinta)}
 
 /* Cabecera */
-header{padding-block:1.2rem;border-bottom:2px solid var(--tinta)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.top{padding-block:1.1rem;border-bottom:2px solid var(--tinta);position:sticky;top:0;background:var(--papel);z-index:10}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .marca{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--display);font-size:1.05rem}
-.marca img{width:2.4rem;height:2.4rem}
-nav{display:flex;gap:1.4rem;font-weight:600}
+.marca img{width:2.3rem;height:2.3rem}
+nav{display:flex;gap:1.3rem;font-weight:600}
 nav a{text-decoration:none;border-bottom:2px solid transparent}
 nav a:hover{border-color:var(--naranja)}
 
 /* Portada */
-.hero{padding-block:clamp(2.5rem,7vw,5rem) 0;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:end}
-.hero h1{font-size:clamp(3rem,9vw,7rem)}
-.hero h1 .apellido{display:block;color:var(--naranja);-webkit-text-stroke:0}
-.hero .nota{font-size:clamp(1.5rem,3.2vw,2.1rem);margin-top:1.2rem;transform:rotate(-1.5deg);transform-origin:left;line-height:1.15}
-.hero .nota b{font-weight:600;background:linear-gradient(transparent 60%,var(--amarillo) 60%)}
-.hero .dato{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.8rem 0 2.6rem}
-.chip{border:2px solid var(--tinta);border-radius:99px;padding:.3rem .9rem;font-weight:600;font-size:.95rem;background:var(--blanco)}
-.chip.on{background:var(--tinta);color:var(--papel)}
-.foto{position:relative;align-self:end;justify-self:center;width:min(440px,100%)}
+.hero{padding-block:clamp(2.5rem,6vw,4.5rem) 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:end}
+.hero h1{font-size:clamp(3rem,8.5vw,6.6rem);margin-top:1rem}
+.hero h1 .apellido{display:block;color:var(--naranja)}
+.hero .lead{font-size:clamp(1.15rem,2vw,1.35rem);max-width:34rem;margin-top:1.3rem}
+.hero .nota{font-size:clamp(1.4rem,2.8vw,1.9rem);margin-top:1rem;transform:rotate(-1.5deg);transform-origin:left;line-height:1.15}
+.ruta{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .5rem}
+.ruta i{font-style:normal;color:var(--naranja)}
+.botones{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.8rem 0 2.6rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;text-decoration:none;border:2.5px solid var(--tinta);border-radius:99px;padding:.6rem 1.2rem;background:var(--naranja);color:var(--tinta);box-shadow:3px 3px 0 var(--tinta);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--tinta)}
+.btn.claro{background:var(--blanco)}
+.foto{position:relative;align-self:end;justify-self:center;width:min(430px,100%);margin:0}
 .foto::before{content:"";position:absolute;inset:14% 6% 0;background:var(--naranja);border:3px solid var(--tinta);border-radius:50% 50% 0 0}
 .foto img{position:relative}
-.foto .sello{position:absolute;right:-2%;top:12%;width:26%;transform:rotate(10deg);filter:drop-shadow(3px 3px 0 var(--tinta))}
 .carretera{height:56px;background:var(--tinta);position:relative}
 .carretera::after{content:"";position:absolute;left:0;right:0;top:50%;height:6px;margin-top:-3px;background:repeating-linear-gradient(90deg,var(--papel) 0 46px,transparent 46px 78px)}
+
+/* Cifras */
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;list-style:none;margin:0;padding:clamp(2rem,5vw,3rem) 0 0}
+.cifras li{border-top:3px solid var(--tinta);padding-top:.8rem}
+.cifras b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1}
+.cifras span{color:var(--gris);font-size:.95rem;display:block;margin-top:.35rem;line-height:1.35}
 
 section{padding-block:clamp(3.5rem,8vw,6rem)}
 .titulo{display:grid;gap:.9rem;margin-bottom:2.2rem;max-width:46rem}
 .titulo h2{font-size:clamp(2rem,5vw,3.4rem)}
+.titulo p{color:var(--gris);font-size:1.1rem}
 
-/* Ahora: La Fuga Stop */
-.fuga{background:var(--lf-fuga);color:var(--blanco);border:3px solid var(--tinta);border-radius:28px;padding:clamp(1.5rem,4vw,3rem);display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3rem);position:relative;overflow:hidden;box-shadow:8px 8px 0 var(--tinta)}
-.fuga::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.09) 0 3px,transparent 3px 26px);pointer-events:none}
-.fuga > *{position:relative}
-.fuga .rombo{width:clamp(110px,16vw,190px)}
-.lockup{display:inline-grid;gap:.1rem;margin-bottom:1rem}
-.lockup b{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:.95}
-.lockup i{font-style:normal;font-family:var(--display);font-size:clamp(1.2rem,2.4vw,1.6rem);justify-self:start;background:var(--lf-senal);color:var(--tinta);padding:.08em .35em .12em;border-radius:.18em;transform:rotate(-3deg);margin-top:.2em}
-.fuga .lema{font-family:var(--mano);font-weight:600;font-size:clamp(1.5rem,3vw,2rem);color:var(--lf-senal);margin:0 0 1rem;line-height:1.15}
-.fuga p{max-width:40rem;margin:0 0 1rem}
-.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin:1.6rem 0;padding:0;list-style:none}
-.cifras li{background:var(--lf-carton);color:var(--tinta);border:2px solid var(--tinta);border-radius:16px;padding:.9rem 1rem}
-.cifras b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.4rem,3vw,2rem);line-height:1}
-.cifras span{font-size:.9rem}
-.botones{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.6rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;text-decoration:none;border:2.5px solid var(--tinta);border-radius:99px;padding:.65rem 1.25rem;background:var(--lf-senal);color:var(--tinta);box-shadow:3px 3px 0 var(--tinta);transition:transform .12s,box-shadow .12s}
-.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--tinta)}
-.btn.claro{background:var(--blanco)}
-.mi-papel{margin-top:2.2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.mi-papel article{border:2px solid var(--tinta);border-radius:18px;padding:1.3rem;background:var(--blanco)}
-.mi-papel h3{font-size:1.15rem;margin-bottom:.5rem}
-.mi-papel p{margin:0;font-size:.98rem}
-.mi-papel .n{font-family:var(--mano);font-size:1.6rem;color:var(--naranja);line-height:1;display:block;margin-bottom:.3rem}
+/* Lo que he fundado */
+.fundado{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem}
+.proyecto{border:3px solid var(--tinta);border-radius:24px;padding:clamp(1.3rem,3vw,2rem);display:grid;gap:.8rem;align-content:start;position:relative;overflow:hidden;box-shadow:6px 6px 0 var(--tinta);background:var(--blanco)}
+.proyecto .cuando{font-family:var(--display);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+.proyecto h3{font-size:clamp(1.5rem,3vw,2.1rem)}
+.p-fuga{grid-column:span 6;background:var(--lf-fuga);color:var(--blanco);grid-template-columns:auto 1fr;column-gap:clamp(1.3rem,4vw,2.6rem)}
+.p-fuga::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.09) 0 3px,transparent 3px 26px);pointer-events:none}
+.p-fuga > *{position:relative}
+.p-fuga .rombo{width:clamp(96px,14vw,170px)}
+.p-fuga .cuerpo{display:grid;gap:.8rem}
+.lockup{display:inline-grid;gap:.1rem}
+.lockup b{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.6vw,3.3rem);line-height:.95}
+.lockup i{font-style:normal;font-family:var(--display);font-size:clamp(1.1rem,2.2vw,1.5rem);justify-self:start;background:var(--amarillo);color:var(--tinta);padding:.08em .35em .12em;border-radius:.18em;transform:rotate(-3deg);margin-top:.2em}
+.p-fuga .lema{font-family:var(--mano);font-weight:600;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--amarillo);line-height:1.15}
+.p-fuga p{max-width:44rem}
+.minicifras{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:.2rem 0}
+.minicifras li{background:var(--lf-carton);color:var(--tinta);border:2px solid var(--tinta);border-radius:12px;padding:.35rem .8rem;font-weight:600;font-size:.95rem}
+.p-fuga .btn{background:var(--amarillo)}
+.p-bafir{grid-column:span 3;background:#DDF1E7}
+.p-fomo{grid-column:span 3;background:var(--fomo)}
+.p-fomo .flamenco{position:absolute;right:-.4rem;top:-.2rem;font-size:6rem;line-height:1;transform:rotate(8deg)}
+.p-fomo .lema{font-family:var(--mano);font-weight:600;font-size:1.7rem;line-height:1.1}
+.p-fomo .cuando,.p-fomo h3{padding-right:4.5rem}
+.p-jump{grid-column:span 6;background:var(--papel2);box-shadow:none;border-style:dashed;grid-template-columns:auto 1fr;align-items:center;column-gap:1.4rem}
+.p-jump h3{font-size:1.3rem;margin:.3rem 0}
+.sello{width:4.4rem;height:4.4rem;border-radius:50%;border:3px solid var(--tinta);display:grid;place-items:center;font-family:var(--display);font-size:1.6rem;background:var(--blanco)}
 
-/* Equipo */
-.equipo{margin-top:1.4rem;display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;font-weight:600}
-.equipo .caras{display:flex}
-.equipo .caras img{width:52px;height:52px;border-radius:50%;border:2.5px solid var(--tinta);object-fit:cover;margin-left:-12px;background:var(--lf-senal)}
-.equipo .caras img:first-child{margin-left:0}
+/* Trayectoria: carretera con hitos */
+.trayecto{list-style:none;margin:0;padding:0;position:relative}
+.trayecto::before{content:"";position:absolute;left:2.1rem;top:.5rem;bottom:.5rem;width:14px;margin-left:-7px;background:var(--tinta);border-radius:7px}
+.trayecto::after{content:"";position:absolute;left:2.1rem;top:1rem;bottom:1rem;width:3px;margin-left:-1.5px;background:repeating-linear-gradient(180deg,var(--papel) 0 14px,transparent 14px 26px)}
+.paso{position:relative;display:grid;grid-template-columns:4.2rem 1fr;gap:1.2rem;padding-bottom:1.6rem}
+.hito{position:relative;z-index:1;width:4.2rem;height:4.6rem;justify-self:center;background:var(--blanco);border:3px solid var(--tinta);border-radius:2.1rem 2.1rem 6px 6px;display:grid;place-items:end center;padding-bottom:.45rem;font-family:var(--display);font-size:.95rem;overflow:hidden}
+.hito::before{content:"";position:absolute;left:0;right:0;top:0;height:42%;background:var(--naranja);border-bottom:3px solid var(--tinta)}
+.paso.ahora .hito::before{background:var(--amarillo)}
+.ficha{background:var(--blanco);border:2px solid var(--tinta);border-radius:18px;padding:1.1rem 1.3rem;display:grid;gap:.45rem}
+.ficha .cab{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.3rem 1rem}
+.ficha h3{font-size:1.25rem}
+.ficha h3 small{font-family:var(--texto);font-weight:600;font-size:.95rem;color:var(--gris);letter-spacing:0;display:block;margin-top:.3rem}
+.ficha .fecha{font-weight:600;font-size:.92rem;white-space:nowrap}
+.ficha .lugar{color:var(--gris);font-size:.92rem}
+.ficha ul{margin:0;padding-left:1.1rem;display:grid;gap:.2rem;font-size:.98rem}
+.etq{display:inline-block;font-family:var(--display);font-size:.68rem;letter-spacing:.1em;background:var(--amarillo);border:2px solid var(--tinta);border-radius:6px;padding:.1rem .4rem;margin-left:.4rem;vertical-align:.2em}
+
+/* Formación */
+.dos{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.lista{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.lista li{border-bottom:2px dashed var(--tinta);padding-bottom:.9rem;display:grid;grid-template-columns:4.5rem 1fr;gap:1rem}
+.lista li:last-child{border-bottom:0}
+.lista .anio{font-family:var(--display);font-size:.95rem}
+.lista b{display:block}
+.lista span{color:var(--gris);font-size:.95rem}
+.idiomas{background:var(--blanco);border:3px solid var(--tinta);border-radius:22px;padding:1.4rem;box-shadow:6px 6px 0 var(--tinta)}
+.idiomas h3{font-size:1.3rem;margin-bottom:1rem}
+.idioma{display:grid;gap:.3rem;margin-bottom:.9rem}
+.idioma div{display:flex;justify-content:space-between;font-weight:600}
+.idioma div span{font-weight:400;color:var(--gris);font-size:.92rem}
+.barra{height:12px;border:2px solid var(--tinta);border-radius:99px;overflow:hidden;background:var(--papel)}
+.barra i{display:block;height:100%;background:var(--naranja)}
+.aptitudes{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.chip{border:2px solid var(--tinta);border-radius:99px;padding:.25rem .8rem;font-weight:600;font-size:.9rem;background:var(--papel)}
 
 /* Contacto */
 .contacto{background:var(--tinta);color:var(--papel)}
@@ -107,26 +149,32 @@ footer .wrap{border-top:1px solid #3a3a3a;padding-top:1.4rem;display:flex;justif
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr}
   .foto{width:min(300px,78%)}
-  .hero .dato{margin-bottom:1rem}
-  .fuga .rombo{width:96px}
-  .cifras span{display:block;line-height:1.25}
-  .fuga{grid-template-columns:1fr}
+  .botones{margin-bottom:1rem}
   .cifras{grid-template-columns:repeat(2,1fr)}
-  .mi-papel{grid-template-columns:1fr}
+  .p-fuga{grid-template-columns:1fr}
+  .p-fuga .rombo{width:90px}
+  .p-bafir,.p-fomo{grid-column:span 6}
+  .p-jump{grid-template-columns:1fr;row-gap:.8rem}
+  .dos{grid-template-columns:1fr}
   .contacto .wrap{grid-template-columns:1fr}
   nav{gap:1rem;font-size:.95rem}
+  .trayecto::before,.trayecto::after{left:1.6rem}
+  .paso{grid-template-columns:3.2rem 1fr;gap:.8rem}
+  .hito{width:3.2rem;height:3.6rem;font-size:.78rem}
 }
-@media (max-width:480px){ nav a:not(:last-child){display:none} }
+@media (max-width:620px){ nav a:not(:last-child){display:none} }
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .btn{transition:none} }
 </style>
 </head>
 <body>
 
-<header>
+<header class="top">
   <div class="wrap">
     <a class="marca" href="#"><img src="img/simbolo.svg" alt="" width="40" height="40">Íñigo de la Calle</a>
     <nav aria-label="Secciones">
-      <a href="#ahora">Ahora</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#formacion">Formación</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
@@ -136,75 +184,188 @@ footer .wrap{border-top:1px solid #3a3a3a;padding-top:1.4rem;display:flex;justif
   <section class="hero" aria-labelledby="nombre">
     <div class="wrap">
       <div>
-        <span class="km">Bilbao · París</span>
-        <h1 id="nombre" style="margin-top:1rem">Íñigo<span class="apellido">de la Calle</span></h1>
-        <p class="nota mano">Monto proyectos que sacan a la gente de casa.<br>Ahora mismo: <b>La Fuga Stop</b>.</p>
-        <div class="dato">
-          <span class="chip on">Fundador de La Fuga Stop</span>
-          <span class="chip">Programación</span>
-          <span class="chip">Eventos</span>
+        <span class="km">París · Bilbao</span>
+        <h1 id="nombre">Íñigo<span class="apellido">de la Calle</span></h1>
+        <p class="lead">Abro mercados y monto proyectos desde cero. Desarrollo de negocio en <b>Alma</b> para España y Portugal, fundador de <b>Bafir</b> y creador de <b>La Fuga Stop</b>.</p>
+        <p class="nota mano ruta">Bilbao <i>→</i> Ho Chi Minh <i>→</i> Moscú <i>→</i> Valencia <i>→</i> Bilbao <i>→</i> París</p>
+        <div class="botones">
+          <a class="btn" href="https://www.linkedin.com/in/inigodelacalle/">LinkedIn</a>
+          <a class="btn claro" href="mailto:inigodelacalle@gmail.com">Escríbeme</a>
         </div>
       </div>
-      <figure class="foto" style="margin:0">
+      <figure class="foto">
         <img src="img/inigo-recorte.png" alt="Retrato de Íñigo de la Calle" width="640" height="640">
-        <img class="sello" src="img/la-fuga-stop.svg" alt="" width="120" height="120">
       </figure>
     </div>
   </section>
   <div class="carretera" aria-hidden="true"></div>
 
-  <section id="ahora" aria-labelledby="t-ahora">
+  <div class="wrap">
+    <ul class="cifras" aria-label="Algunas cifras">
+      <li><b>×20</b><span>ingresos recurrentes en Berba, de 5.000 € a 100.000 € al mes</span></li>
+      <li><b>2 meses</b><span>hasta cubrir gastos en FOMO coworking</span></li>
+      <li><b>+10 países</b><span>donde he lanzado o llevado mercado</span></li>
+      <li><b>4 idiomas</b><span>euskera, castellano, inglés y francés</span></li>
+    </ul>
+  </div>
+
+  <section id="proyectos" aria-labelledby="t-proyectos">
     <div class="wrap">
       <div class="titulo">
-        <span class="km">Ahora</span>
-        <h2 id="t-ahora">Estoy montando una fuga.</h2>
+        <span class="km">Lo que he fundado</span>
+        <h2 id="t-proyectos">Me interesa más construir que seguir un manual.</h2>
       </div>
 
-      <article class="fuga" aria-label="La Fuga Stop">
-        <img class="rombo" src="img/la-fuga-stop.svg" alt="Símbolo de La Fuga Stop" width="190" height="190">
-        <div>
-          <div class="lockup"><b>LA FUGA</b><i>STOP</i></div>
-          <p class="lema">Sal en autostop. Vuelve con una historia.</p>
-          <p>Una aventura de dos en dos: sales en autostop desde una ciudad y llegas a un pueblo que no conoces hasta el último momento. Allí te espera una fiesta con la gente del pueblo. No hay clasificación ni cronómetro: lo que cuenta es el camino y lo que dejas al llegar.</p>
-          <p>La idea es unir la ciudad y el pueblo, y que cada edición siembre algo en un pueblo que lo necesita.</p>
-          <ul class="cifras">
-            <li><b>2027</b><span>Julio, primera edición</span></li>
-            <li><b>5</b><span>Ciudades de salida</span></li>
-            <li><b>500</b><span>Plazas</span></li>
-            <li><b>1</b><span>Pueblo secreto</span></li>
-          </ul>
-          <div class="botones">
-            <a class="btn" href="https://ikalek0.github.io/la-fuga-stop/">Apúntate a la lista de espera →</a>
-            <a class="btn claro" href="https://ikalek0.github.io/la-fuga-stop-ayuntamientos/">¿Eres de un ayuntamiento?</a>
+      <div class="fundado">
+        <article class="proyecto p-fuga" aria-label="La Fuga Stop">
+          <img class="rombo" src="img/la-fuga-stop.svg" alt="Símbolo de La Fuga Stop" width="170" height="170">
+          <div class="cuerpo">
+            <span class="cuando">2026 – ahora · creador</span>
+            <div class="lockup"><b>LA FUGA</b><i>STOP</i></div>
+            <p class="lema">Sal en autostop. Vuelve con una historia.</p>
+            <p>Una aventura en autostop de dos en dos: sales desde Bilbao, Madrid, Zaragoza, Barcelona o Valencia y llegas a un pueblo que no conoces hasta el último momento, donde te espera una fiesta con sus vecinos. Sin clasificación ni cronómetro. La idea es unir la ciudad y el pueblo.</p>
+            <ul class="minicifras">
+              <li>Julio de 2027</li><li>500 plazas</li><li>5 salidas</li><li>1 pueblo secreto</li>
+            </ul>
+            <div><a class="btn" href="https://ikalek0.github.io/la-fuga-stop/">Ver La Fuga Stop →</a></div>
           </div>
-          <div class="equipo">
-            <span class="caras">
-              <img src="img/equipo/inigo.jpg" alt="" width="52" height="52" loading="lazy">
-              <img src="img/equipo/mara.jpg" alt="" width="52" height="52" loading="lazy">
-              <img src="img/equipo/diego.jpg" alt="" width="52" height="52" loading="lazy">
-              <img src="img/equipo/fannie.jpg" alt="" width="52" height="52" loading="lazy">
-            </span>
-            Con Mara, Diego y Fannie.
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <div class="mi-papel">
-        <article>
-          <span class="n">la idea</span>
-          <h3>De dónde sale</h3>
-          <p>De las aventuras en autostop que ya se hacen en Francia desde hace diez años. Aquí no había nada parecido, así que lo estamos haciendo.</p>
+        <article class="proyecto p-bafir">
+          <span class="cuando">2025 – ahora · fundador · París</span>
+          <h3>Bafir</h3>
+          <p>Convertimos mejoras energéticas en CAE (certificados de ahorro energético) en Francia: fachadas, aislamientos, bombas de calor, climatización o cambios de maquinaria. Cada mejora puede generar un ahorro económico para quien la hace.</p>
         </article>
-        <article>
-          <span class="n">los pueblos</span>
-          <h3>Con quién</h3>
-          <p>Hablamos con ayuntamientos de toda la España vaciada para elegir el destino. La fiesta se hace junto al pueblo, con sus vecinos.</p>
+
+        <article class="proyecto p-fomo">
+          <span class="flamenco" aria-hidden="true">🦩</span>
+          <span class="cuando">2021 – 2023 · CEO y cofundador · Bilbao</span>
+          <h3>FOMO coworking</h3>
+          <p class="lema">Bilbao está en FOMO.</p>
+          <p>Un coworking con las mejores vistas de la ciudad, donde se podía venir con perro y quedarse a tomar algo. Tiramos paredes y pintamos durante diez fines de semana, cubrimos gastos en dos meses y organizamos conciertos como el FOMO Fest.</p>
         </article>
-        <article>
-          <span class="n">las herramientas</span>
-          <h3>Cómo</h3>
-          <p>Lo que hace falta lo construimos nosotros: la web, el panel de organización, el seguimiento del viaje y el sistema de pago de la fiesta.</p>
+
+        <article class="proyecto p-jump">
+          <span class="sello" aria-hidden="true">J!</span>
+          <div>
+            <span class="cuando">2016 – 2017 · fundador · Bilbao</span>
+            <h3>Jump in!</h3>
+            <p>Mi primer proyecto: una idea de autobuses para quitar tráfico y contaminación de las grandes ciudades.</p>
+          </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="trayectoria" aria-labelledby="t-trayectoria" style="background:var(--papel2);border-block:2px solid var(--tinta)">
+    <div class="wrap">
+      <div class="titulo">
+        <span class="km">Trayectoria</span>
+        <h2 id="t-trayectoria">Diez años abriendo camino.</h2>
+        <p>De la ingeniería civil al desarrollo de negocio internacional, pasando por cuatro startups.</p>
+      </div>
+
+      <ol class="trayecto">
+        <li class="paso ahora">
+          <span class="hito">2025</span>
+          <div class="ficha">
+            <div class="cab"><h3>Alma <span class="etq">AHORA</span><small>Expansión internacional · España y Portugal</small></h3><span class="fecha">2025 – hoy</span></div>
+            <span class="lugar">París</span>
+            <p>Pagos a plazos para comercios online. Desarrollo de negocio y expansión en la península ibérica, con un modelo que no cobra comisiones por retraso.</p>
+          </div>
+        </li>
+        <li class="paso">
+          <span class="hito">2024</span>
+          <div class="ficha">
+            <div class="cab"><h3>OTC Flow<small>Desarrollo de negocio · mercado español</small></h3><span class="fecha">2024 – 2025</span></div>
+            <span class="lugar">París</span>
+            <p>Bróker del mercado medioambiental. Abrí el mercado español: socios clave, análisis de las mejoras de eficiencia de los clientes y expedientes técnicos completos.</p>
+          </div>
+        </li>
+        <li class="paso">
+          <span class="hito">2023</span>
+          <div class="ficha">
+            <div class="cab"><h3>Speechi<small>Desarrollo de negocio · Europa</small></h3><span class="fecha">2023 – 2024</span></div>
+            <span class="lugar">París</span>
+            <ul>
+              <li>Acuerdos con los mayores distribuidores tecnológicos de España y Rumanía, el de más crecimiento de Portugal y el mayor de mobiliario de oficina de Reino Unido e Irlanda.</li>
+              <li>Coordinación de equipos para ganar licitaciones de 100.000 € a 1 M€.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="paso">
+          <span class="hito">2021</span>
+          <div class="ficha">
+            <div class="cab"><h3>FOMO 🦩 coworking<small>CEO y cofundador</small></h3><span class="fecha">2021 – 2023</span></div>
+            <span class="lugar">Bilbao</span>
+            <p>Del local vacío a cubrir gastos en dos meses. Ventas, comunidad, eventos y conciertos.</p>
+          </div>
+        </li>
+        <li class="paso">
+          <span class="hito">2020</span>
+          <div class="ficha">
+            <div class="cab"><h3>Berba<small>Head of Sales &amp; Operations</small></h3><span class="fecha">2020 – 2023</span></div>
+            <span class="lugar">Bilbao</span>
+            <ul>
+              <li>Ingresos recurrentes de 5.000 € a 100.000 € al mes, con un equipo de 8 personas en 3 países.</li>
+              <li>Las mayores cuentas (más del 60 % de los ingresos): Unilever, Colgate, UNESCO.</li>
+              <li>Lancé una vertical nueva, transcripciones, que llegó al 20 % de los ingresos.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="paso">
+          <span class="hito">2019</span>
+          <div class="ficha">
+            <div class="cab"><h3>Jeffapp (Mr Jeff)<small>Market Launcher · Procurement Manager Asia-Pacífico</small></h3><span class="fecha">2019 – 2020</span></div>
+            <span class="lugar">Moscú y Valencia</span>
+            <p>Lancé la marca en Rusia, Bielorrusia y Chequia, y BeautyJeff en Tailandia, Vietnam e Indonesia. Después llevé las compras de Asia-Pacífico.</p>
+          </div>
+        </li>
+        <li class="paso">
+          <span class="hito">2017</span>
+          <div class="ficha">
+            <div class="cab"><h3>Aaisa Vietnam<small>Country Manager</small></h3><span class="fecha">2017 – 2019</span></div>
+            <span class="lugar">Ho Chi Minh</span>
+            <p>Monté la filial en Vietnam: clientes, proveedores, administración y proyectos.</p>
+          </div>
+        </li>
+        <li class="paso">
+          <span class="hito">2016</span>
+          <div class="ficha">
+            <div class="cab"><h3>ICEX · Oficina Económica y Comercial de España<small>Asesor de comercio internacional (beca BEINT)</small></h3><span class="fecha">2016 – 2017</span></div>
+            <span class="lugar">Ho Chi Minh</span>
+            <p>Oportunidades comerciales y de inversión en Vietnam para empresas españolas.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="formacion" aria-labelledby="t-formacion">
+    <div class="wrap">
+      <div class="titulo">
+        <span class="km">Formación</span>
+        <h2 id="t-formacion">Ingeniero, economista y programador.</h2>
+      </div>
+      <div class="dos">
+        <ul class="lista">
+          <li><span class="anio">2024</span><div><b>Google Project Management</b><span>Especialización en gestión de proyectos</span></div></li>
+          <li><span class="anio">2023</span><div><b>42 París</b><span>Programación en C y SQL</span></div></li>
+          <li><span class="anio">2019</span><div><b>ThePowerMBA</b><span>Business Expert, gestión y administración de empresas</span></div></li>
+          <li><span class="anio">2018</span><div><b>Máster en Internacionalización de Empresas</b><span>EHU · programa BEINT</span></div></li>
+          <li><span class="anio">2017</span><div><b>Máster en Economía: Instrumentos del Análisis Económico</b><span>EHU</span></div></li>
+          <li><span class="anio">2016</span><div><b>Grado en Ingeniería Civil</b><span>EHU · Erasmus en la Politécnica de Gdańsk. Trabajo de fin de grado: peatonalizar Abando, en Bilbao.</span></div></li>
+        </ul>
+        <aside class="idiomas" aria-label="Idiomas">
+          <h3>Idiomas</h3>
+          <div class="idioma"><div>Euskera <span>nativo</span></div><div class="barra"><i style="width:100%"></i></div></div>
+          <div class="idioma"><div>Castellano <span>nativo</span></div><div class="barra"><i style="width:100%"></i></div></div>
+          <div class="idioma"><div>Inglés <span>profesional completo</span></div><div class="barra"><i style="width:85%"></i></div></div>
+          <div class="idioma"><div>Francés <span>profesional</span></div><div class="barra"><i style="width:60%"></i></div></div>
+          <div class="aptitudes">
+            <span class="chip">Desarrollo de negocio</span><span class="chip">Ventas B2B</span><span class="chip">Expansión internacional</span><span class="chip">Operaciones</span><span class="chip">Eventos</span><span class="chip">Análisis de datos</span>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -217,7 +378,7 @@ footer .wrap{border-top:1px solid #3a3a3a;padding-top:1.4rem;display:flex;justif
       </div>
       <ul>
         <li><a href="mailto:inigodelacalle@gmail.com">inigodelacalle@gmail.com</a></li>
-        <li><a href="https://github.com/ikalek0">github.com/ikalek0</a></li>
+        <li><a href="https://www.linkedin.com/in/inigodelacalle/">LinkedIn</a></li>
         <li><a href="https://ikalek0.github.io/la-fuga-stop/">La Fuga Stop</a></li>
       </ul>
     </div>
