@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400">
+  <title>La Fuga Stop · símbolo</title>
+  <defs><clipPath id="rombo"><path d="M50 6 94 50 50 94 6 50Z"/></clipPath></defs>
+  <path d="M50 6 94 50 50 94 6 50Z" fill="#FFD21F"/>
+  <g clip-path="url(#rombo)">
+    <path d="M0 50 Q14 45 26 48 T48 47.5 L52 47.5 Q66 44 78 47.5 T100 49 V100 H0Z" fill="#1E9E6A"/>
+    <path d="M14 100 L48.8 48 L51.2 48 L86 100Z" fill="#141414"/>
+    <path d="M49.75 52h.5v3h-.5z M49.4 59h1.2v5h-1.2z M48.9 69h2.2v8h-2.2z M48.2 82h3.6v9h-3.6z" fill="#FFD21F"/>
+    <path d="M57 48v-4.5l2.6-2.6 2.6 2.6V48z M63 48V37.5h1.2v-2.2l1.4-1.8 1.4 1.8v2.2h1.2V48z M70 48v-3.6l2.4-2.4 2.4 2.4V48z" fill="#141414"/>
+  </g>
+  <path d="M50 26.5l2.3 8.2 8.2 2.3-8.2 2.3-2.3 8.2-2.3-8.2-8.2-2.3 8.2-2.3z" fill="#FF5C93" stroke="#141414" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M50 6 94 50 50 94 6 50Z" fill="none" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+</svg>

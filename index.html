@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Íñigo de la Calle</title>
+<meta name="description" content="Íñigo de la Calle. Entre Bilbao y París. Ahora estoy montando La Fuga Stop, una aventura en autostop hasta un pueblo secreto.">
+<meta property="og:title" content="Íñigo de la Calle">
+<meta property="og:description" content="Ahora estoy montando La Fuga Stop: sal en autostop, vuelve con una historia.">
+<meta property="og:image" content="img/inigo-recorte.png">
+<link rel="icon" href="img/simbolo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#F3EEE4; --papel2:#E8E0D0; --tinta:#141414; --naranja:#FF5A1F; --amarillo:#FFD21F; --blanco:#FFFFFF;
+  /* La Fuga Stop, solo dentro de su tarjeta */
+  --lf-senal:#FFD21F; --lf-fuga:#2741E8; --lf-chispa:#FF5C93; --lf-carton:#F6F0E4;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --texto:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --mano:"Caveat","Marker Felt",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--texto);font-size:1.0625rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.98;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.mano{font-family:var(--mano);font-weight:600}
+.km{font-family:var(--display);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6rem}
+.km::before{content:"";width:1.1rem;height:1.1rem;border-radius:50% 50% 2px 2px;background:var(--naranja);border:2px solid var(--tinta)}
+
+/* Cabecera */
+header{padding-block:1.2rem;border-bottom:2px solid var(--tinta)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.marca{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--display);font-size:1.05rem}
+.marca img{width:2.4rem;height:2.4rem}
+nav{display:flex;gap:1.4rem;font-weight:600}
+nav a{text-decoration:none;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--naranja)}
+
+/* Portada */
+.hero{padding-block:clamp(2.5rem,7vw,5rem) 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:end}
+.hero h1{font-size:clamp(3rem,9vw,7rem)}
+.hero h1 .apellido{display:block;color:var(--naranja);-webkit-text-stroke:0}
+.hero .nota{font-size:clamp(1.5rem,3.2vw,2.1rem);margin-top:1.2rem;transform:rotate(-1.5deg);transform-origin:left;line-height:1.15}
+.hero .nota b{font-weight:600;background:linear-gradient(transparent 60%,var(--amarillo) 60%)}
+.hero .dato{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.8rem 0 2.6rem}
+.chip{border:2px solid var(--tinta);border-radius:99px;padding:.3rem .9rem;font-weight:600;font-size:.95rem;background:var(--blanco)}
+.chip.on{background:var(--tinta);color:var(--papel)}
+.foto{position:relative;align-self:end;justify-self:center;width:min(440px,100%)}
+.foto::before{content:"";position:absolute;inset:14% 6% 0;background:var(--naranja);border:3px solid var(--tinta);border-radius:50% 50% 0 0}
+.foto img{position:relative}
+.foto .sello{position:absolute;right:-2%;top:12%;width:26%;transform:rotate(10deg);filter:drop-shadow(3px 3px 0 var(--tinta))}
+.carretera{height:56px;background:var(--tinta);position:relative}
+.carretera::after{content:"";position:absolute;left:0;right:0;top:50%;height:6px;margin-top:-3px;background:repeating-linear-gradient(90deg,var(--papel) 0 46px,transparent 46px 78px)}
+
+section{padding-block:clamp(3.5rem,8vw,6rem)}
+.titulo{display:grid;gap:.9rem;margin-bottom:2.2rem;max-width:46rem}
+.titulo h2{font-size:clamp(2rem,5vw,3.4rem)}
+
+/* Ahora: La Fuga Stop */
+.fuga{background:var(--lf-fuga);color:var(--blanco);border:3px solid var(--tinta);border-radius:28px;padding:clamp(1.5rem,4vw,3rem);display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3rem);position:relative;overflow:hidden;box-shadow:8px 8px 0 var(--tinta)}
+.fuga::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.09) 0 3px,transparent 3px 26px);pointer-events:none}
+.fuga > *{position:relative}
+.fuga .rombo{width:clamp(110px,16vw,190px)}
+.lockup{display:inline-grid;gap:.1rem;margin-bottom:1rem}
+.lockup b{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:.95}
+.lockup i{font-style:normal;font-family:var(--display);font-size:clamp(1.2rem,2.4vw,1.6rem);justify-self:start;background:var(--lf-senal);color:var(--tinta);padding:.08em .35em .12em;border-radius:.18em;transform:rotate(-3deg);margin-top:.2em}
+.fuga .lema{font-family:var(--mano);font-weight:600;font-size:clamp(1.5rem,3vw,2rem);color:var(--lf-senal);margin:0 0 1rem;line-height:1.15}
+.fuga p{max-width:40rem;margin:0 0 1rem}
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin:1.6rem 0;padding:0;list-style:none}
+.cifras li{background:var(--lf-carton);color:var(--tinta);border:2px solid var(--tinta);border-radius:16px;padding:.9rem 1rem}
+.cifras b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.4rem,3vw,2rem);line-height:1}
+.cifras span{font-size:.9rem}
+.botones{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.6rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;text-decoration:none;border:2.5px solid var(--tinta);border-radius:99px;padding:.65rem 1.25rem;background:var(--lf-senal);color:var(--tinta);box-shadow:3px 3px 0 var(--tinta);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--tinta)}
+.btn.claro{background:var(--blanco)}
+.mi-papel{margin-top:2.2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.mi-papel article{border:2px solid var(--tinta);border-radius:18px;padding:1.3rem;background:var(--blanco)}
+.mi-papel h3{font-size:1.15rem;margin-bottom:.5rem}
+.mi-papel p{margin:0;font-size:.98rem}
+.mi-papel .n{font-family:var(--mano);font-size:1.6rem;color:var(--naranja);line-height:1;display:block;margin-bottom:.3rem}
+
+/* Equipo */
+.equipo{margin-top:1.4rem;display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;font-weight:600}
+.equipo .caras{display:flex}
+.equipo .caras img{width:52px;height:52px;border-radius:50%;border:2.5px solid var(--tinta);object-fit:cover;margin-left:-12px;background:var(--lf-senal)}
+.equipo .caras img:first-child{margin-left:0}
+
+/* Contacto */
+.contacto{background:var(--tinta);color:var(--papel)}
+.contacto .wrap{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
+.contacto h2{font-size:clamp(2.2rem,6vw,4.4rem)}
+.contacto h2 span{color:var(--naranja)}
+.contacto .km::before{border-color:var(--papel)}
+.contacto ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;font-size:1.15rem}
+.contacto a{text-decoration-color:var(--naranja);text-underline-offset:.2em;text-decoration-thickness:2px}
+footer{background:var(--tinta);color:#9c968c;font-size:.88rem;padding-block:0 2.2rem}
+footer .wrap{border-top:1px solid #3a3a3a;padding-top:1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .foto{width:min(300px,78%)}
+  .hero .dato{margin-bottom:1rem}
+  .fuga .rombo{width:96px}
+  .cifras span{display:block;line-height:1.25}
+  .fuga{grid-template-columns:1fr}
+  .cifras{grid-template-columns:repeat(2,1fr)}
+  .mi-papel{grid-template-columns:1fr}
+  .contacto .wrap{grid-template-columns:1fr}
+  nav{gap:1rem;font-size:.95rem}
+}
+@media (max-width:480px){ nav a:not(:last-child){display:none} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .btn{transition:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="marca" href="#"><img src="img/simbolo.svg" alt="" width="40" height="40">Íñigo de la Calle</a>
+    <nav aria-label="Secciones">
+      <a href="#ahora">Ahora</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="nombre">
+    <div class="wrap">
+      <div>
+        <span class="km">Bilbao · París</span>
+        <h1 id="nombre" style="margin-top:1rem">Íñigo<span class="apellido">de la Calle</span></h1>
+        <p class="nota mano">Monto proyectos que sacan a la gente de casa.<br>Ahora mismo: <b>La Fuga Stop</b>.</p>
+        <div class="dato">
+          <span class="chip on">Fundador de La Fuga Stop</span>
+          <span class="chip">Programación</span>
+          <span class="chip">Eventos</span>
+        </div>
+      </div>
+      <figure class="foto" style="margin:0">
+        <img src="img/inigo-recorte.png" alt="Retrato de Íñigo de la Calle" width="640" height="640">
+        <img class="sello" src="img/la-fuga-stop.svg" alt="" width="120" height="120">
+      </figure>
+    </div>
+  </section>
+  <div class="carretera" aria-hidden="true"></div>
+
+  <section id="ahora" aria-labelledby="t-ahora">
+    <div class="wrap">
+      <div class="titulo">
+        <span class="km">Ahora</span>
+        <h2 id="t-ahora">Estoy montando una fuga.</h2>
+      </div>
+
+      <article class="fuga" aria-label="La Fuga Stop">
+        <img class="rombo" src="img/la-fuga-stop.svg" alt="Símbolo de La Fuga Stop" width="190" height="190">
+        <div>
+          <div class="lockup"><b>LA FUGA</b><i>STOP</i></div>
+          <p class="lema">Sal en autostop. Vuelve con una historia.</p>
+          <p>Una aventura de dos en dos: sales en autostop desde una ciudad y llegas a un pueblo que no conoces hasta el último momento. Allí te espera una fiesta con la gente del pueblo. No hay clasificación ni cronómetro: lo que cuenta es el camino y lo que dejas al llegar.</p>
+          <p>La idea es unir la ciudad y el pueblo, y que cada edición siembre algo en un pueblo que lo necesita.</p>
+          <ul class="cifras">
+            <li><b>2027</b><span>Julio, primera edición</span></li>
+            <li><b>5</b><span>Ciudades de salida</span></li>
+            <li><b>500</b><span>Plazas</span></li>
+            <li><b>1</b><span>Pueblo secreto</span></li>
+          </ul>
+          <div class="botones">
+            <a class="btn" href="https://ikalek0.github.io/la-fuga-stop/">Apúntate a la lista de espera →</a>
+            <a class="btn claro" href="https://ikalek0.github.io/la-fuga-stop-ayuntamientos/">¿Eres de un ayuntamiento?</a>
+          </div>
+          <div class="equipo">
+            <span class="caras">
+              <img src="img/equipo/inigo.jpg" alt="" width="52" height="52" loading="lazy">
+              <img src="img/equipo/mara.jpg" alt="" width="52" height="52" loading="lazy">
+              <img src="img/equipo/diego.jpg" alt="" width="52" height="52" loading="lazy">
+              <img src="img/equipo/fannie.jpg" alt="" width="52" height="52" loading="lazy">
+            </span>
+            Con Mara, Diego y Fannie.
+          </div>
+        </div>
+      </article>
+
+      <div class="mi-papel">
+        <article>
+          <span class="n">la idea</span>
+          <h3>De dónde sale</h3>
+          <p>De las aventuras en autostop que ya se hacen en Francia desde hace diez años. Aquí no había nada parecido, así que lo estamos haciendo.</p>
+        </article>
+        <article>
+          <span class="n">los pueblos</span>
+          <h3>Con quién</h3>
+          <p>Hablamos con ayuntamientos de toda la España vaciada para elegir el destino. La fiesta se hace junto al pueblo, con sus vecinos.</p>
+        </article>
+        <article>
+          <span class="n">las herramientas</span>
+          <h3>Cómo</h3>
+          <p>Lo que hace falta lo construimos nosotros: la web, el panel de organización, el seguimiento del viaje y el sistema de pago de la fiesta.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto" aria-labelledby="t-contacto">
+    <div class="wrap">
+      <div class="titulo" style="margin:0">
+        <span class="km">Contacto</span>
+        <h2 id="t-contacto">¿Hablamos? <span>Escríbeme.</span></h2>
+      </div>
+      <ul>
+        <li><a href="mailto:inigodelacalle@gmail.com">inigodelacalle@gmail.com</a></li>
+        <li><a href="https://github.com/ikalek0">github.com/ikalek0</a></li>
+        <li><a href="https://ikalek0.github.io/la-fuga-stop/">La Fuga Stop</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Íñigo de la Calle</span>
+    <span>inigodelacalle.com</span>
+  </div>
+</footer>
+</body>
+</html>
