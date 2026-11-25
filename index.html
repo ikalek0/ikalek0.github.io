@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Iñigo de la Calle · Desarrollo de negocio y proyectos propios</title>
-<meta name="description" content="Iñigo de la Calle. Abro mercados y monto proyectos desde cero: Alma, Bafir, FOMO coworking, Berba y ahora La Fuga Stop. Entre París y Bilbao.">
+<meta name="description" content="Iñigo de la Calle. Abro mercados y monto proyectos desde cero: Alma, Bafir, FOMO coworking, Berba y ahora La Fuga Stop. También adiestrador canino. Entre París y Bilbao.">
 <meta property="og:title" content="Iñigo de la Calle">
 <meta property="og:description" content="Abro mercados y monto proyectos desde cero. Ahora: Alma, Bafir y La Fuga Stop.">
 <meta property="og:image" content="img/inigo-recorte.png">
@@ -100,6 +100,21 @@ section{padding-block:clamp(3.5rem,8vw,6rem)}
 .p-jump h3{font-size:1.3rem;margin:.3rem 0}
 .sello{width:4.4rem;height:4.4rem;border-radius:50%;border:3px solid var(--tinta);display:grid;place-items:center;font-family:var(--display);font-size:1.6rem;background:var(--blanco)}
 
+
+/* Adiestrador */
+.perros .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.perros .texto{display:grid;gap:1rem}
+.perros .texto h2{font-size:clamp(2rem,5vw,3.4rem)}
+.perros .texto p{font-size:1.1rem;max-width:32rem}
+.polaroids{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding-block:1rem}
+.polaroid{margin:0;background:var(--blanco);border:3px solid var(--tinta);border-radius:10px;padding:.6rem .6rem 0;box-shadow:6px 6px 0 var(--tinta)}
+.polaroid img{border-radius:4px;aspect-ratio:4/5;object-fit:cover;object-position:center 80%;height:auto;width:100%;border:2px solid var(--tinta)}
+.polaroid figcaption{font-family:var(--mano);font-weight:600;font-size:1.45rem;text-align:center;padding:.35rem 0 .45rem;line-height:1.1}
+.polaroid:nth-child(1){transform:rotate(-3deg)}
+.polaroid:nth-child(2){transform:rotate(2.5deg) translateY(1.6rem)}
+.huella{display:inline-block;background:var(--amarillo);border:2px solid var(--tinta);border-radius:99px;padding:.2rem .8rem;font-weight:600;font-size:.95rem;justify-self:start}
+@media (max-width:860px){ .perros .wrap{grid-template-columns:1fr} }
+
 /* Trayectoria: carretera con hitos */
 .trayecto{list-style:none;margin:0;padding:0;position:relative}
 .trayecto::before{content:"";position:absolute;left:2.1rem;top:.5rem;bottom:.5rem;width:14px;margin-left:-7px;background:var(--tinta);border-radius:7px}
@@ -173,6 +188,7 @@ footer .wrap{border-top:1px solid #3a3a3a;padding-top:1.4rem;display:flex;justif
     <a class="marca" href="#"><img src="img/simbolo.svg" alt="" width="40" height="40">Iñigo de la Calle</a>
     <nav aria-label="Secciones">
       <a href="#proyectos">Proyectos</a>
+      <a href="#perros">Perros</a>
       <a href="#trayectoria">Trayectoria</a>
       <a href="#formacion">Formación</a>
       <a href="#contacto">Contacto</a>
@@ -186,7 +202,7 @@ footer .wrap{border-top:1px solid #3a3a3a;padding-top:1.4rem;display:flex;justif
       <div>
         <span class="km">París · Bilbao</span>
         <h1 id="nombre">Iñigo<span class="apellido">de la Calle</span></h1>
-        <p class="lead">Abro mercados y monto proyectos desde cero. Desarrollo de negocio en <b>Alma</b> para España y Portugal, fundador de <b>Bafir</b> y creador de <b>La Fuga Stop</b>.</p>
+        <p class="lead">Abro mercados y monto proyectos desde cero. Desarrollo de negocio en <b>Alma</b> para España y Portugal, fundador de <b>Bafir</b>, creador de <b>La Fuga Stop</b> y adiestrador canino.</p>
         <p class="nota mano ruta">Bilbao <i>→</i> Ho Chi Minh <i>→</i> Moscú <i>→</i> Valencia <i>→</i> Bilbao <i>→</i> París</p>
         <div class="botones">
           <a class="btn" href="https://www.linkedin.com/in/inigodelacalle/">LinkedIn</a>
@@ -253,6 +269,21 @@ footer .wrap{border-top:1px solid #3a3a3a;padding-top:1.4rem;display:flex;justif
             <p>Mi primer proyecto: una idea de autobuses para quitar tráfico y contaminación de las grandes ciudades.</p>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="perros" id="perros" aria-labelledby="t-perros">
+    <div class="wrap">
+      <div class="texto">
+        <span class="km">Adiestrador canino</span>
+        <h2 id="t-perros">Y también entreno perros.</h2>
+        <p>Soy adiestrador canino. Trabajo con perros y con las personas que viven con ellos para que la convivencia sea fácil, en casa, en la ciudad y en la montaña.</p>
+        <span class="huella">🐾 Pregúntame por sesiones</span>
+      </div>
+      <div class="polaroids">
+        <figure class="polaroid"><img src="img/perros/montana.jpg" alt="Perra de pelo largo color canela sentada en su cama, con los Dolomitas al atardecer detrás" width="825" height="1100" loading="lazy"><figcaption>Quieta… y a disfrutar</figcaption></figure>
+        <figure class="polaroid"><img src="img/perros/choca.jpg" alt="Iñigo chocando la mano con la pata de su perra en la montaña" width="825" height="1100" loading="lazy"><figcaption>¡Choca esa pata!</figcaption></figure>
       </div>
     </div>
   </section>
@@ -355,7 +386,7 @@ footer .wrap{border-top:1px solid #3a3a3a;padding-top:1.4rem;display:flex;justif
           <div class="idioma"><div>Inglés <span>profesional completo</span></div><div class="barra"><i style="width:85%"></i></div></div>
           <div class="idioma"><div>Francés <span>profesional</span></div><div class="barra"><i style="width:60%"></i></div></div>
           <div class="aptitudes">
-            <span class="chip">Desarrollo de negocio</span><span class="chip">Ventas B2B</span><span class="chip">Expansión internacional</span><span class="chip">Operaciones</span><span class="chip">Eventos</span><span class="chip">Análisis de datos</span>
+            <span class="chip">Desarrollo de negocio</span><span class="chip">Ventas B2B</span><span class="chip">Expansión internacional</span><span class="chip">Operaciones</span><span class="chip">Eventos</span><span class="chip">Análisis de datos</span><span class="chip">Adiestramiento canino</span>
           </div>
         </aside>
       </div>
